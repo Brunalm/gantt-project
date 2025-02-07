@@ -65,7 +65,7 @@ export default function GanttChart() {
 
   function handleToolbarClick(args) {
     if (args.item.properties.id === 'custom_save') {
-      console.log('entrei', ganttRef.current?.dataSource)
+      console.log('dataSource', ganttRef.current?.dataSource)
     }
   }
   return (
@@ -81,6 +81,8 @@ export default function GanttChart() {
         toolbar={toolbar}
         toolbarClick={handleToolbarClick}
         editSettings={editSettings}
+        enableVirtualization={true}
+        enableTimelineVirtualization={true}
       >
         <ColumnsDirective>
           <ColumnDirective field="taskId" headerText="ID" width="100" />
